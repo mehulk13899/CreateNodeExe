@@ -59,7 +59,9 @@ app.get('/api',(req,res)=>{
 })
 
 
-app.listen(3001,'192.168.1.7',()=>{
-    console.log(`server running pn port number 3001`)
+app.listen(process.env.PORT||2000,`${process.env.IPADDRESS}`||`localhost`,()=>{
+  console.log(`server running pn port number http://${process.env.IPADDRESS}:${process.env.port}`)
 })
+
+
 
